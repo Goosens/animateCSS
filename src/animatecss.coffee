@@ -17,6 +17,7 @@ $.fn.extend
       infinite: false
       callback: options
       debug: false
+      duration: 1
 
     # Vendor prefixed transition callbacks
     transitionEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
@@ -35,10 +36,18 @@ $.fn.extend
 
       # Run a timer regardless of delay (as 0 will fire instantly anyway)
       setTimeout  ->
+        setDuration( element )
         unhide( element )
         addClass( element )
         complete( element )
       , settings.delay
+
+    # Add custom duration to element
+    setDuration = (element) ->
+      element.css(
+        'webkit-animation-duration' : settings.duration + 's'
+        'animation-duration' : settings.duration + 's'
+       )
 
     # Add the animation ad effect classes to kick everything off
     addClass = ( element ) ->
