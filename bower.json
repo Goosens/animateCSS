@@ -9,7 +9,7 @@
   "devDependencies": {
     "jquery": "~1.11.0"
   },
-  "homepage": "https://github.com/craigmdennis/animateCSS",
+  "homepage": "https://github.com/goosens/animateCSS",
   "authors": [
     "Craig Dennis <craigmdennis@gmail.com>"
   ],
